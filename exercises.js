@@ -17,4 +17,8 @@ export const calculator = {
     const sum = num1 + num2;
     return sum;
   },
+  subtract: (num1, num2) => {
+    const difference = num1 - num2;
+    return difference;
+  },
 };
