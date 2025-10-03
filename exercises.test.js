@@ -13,3 +13,7 @@ test("reverses a string", () => {
 test("add two numbers together", () => {
   expect(calculator.add(2, 3)).toBe(5);
 });
+
+test("subtract two numbers, return difference", () => {
+  expect(calculator.subtract(10, 7)).toBe(3);
+});
