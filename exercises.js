@@ -11,3 +11,10 @@ export function reverseString(str) {
 
   return reversedStr;
 }
+
+export const calculator = {
+  add: (num1, num2) => {
+    const sum = num1 + num2;
+    return sum;
+  },
+};
