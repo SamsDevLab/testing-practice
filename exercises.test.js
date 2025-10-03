@@ -46,3 +46,12 @@ test("divide two numbers, return quotient", () => {
 test("divide two numbers, return quotient", () => {
   expect(calculator.divide(72, 9)).toBe(8);
 });
+
+// Multiply
+test("multiply two numbers, return product", () => {
+  expect(calculator.multiply(5, 9)).toBe(45);
+});
+
+test("multiply two numbers, return product", () => {
+  expect(calculator.multiply(10, 3)).toBe(30);
+});
