@@ -21,4 +21,8 @@ export const calculator = {
     const difference = num1 - num2;
     return difference;
   },
+  divide: (num1, num2) => {
+    const quotient = num1 / num2;
+    return quotient;
+  },
 };
