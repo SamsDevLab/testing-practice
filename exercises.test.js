@@ -17,3 +17,7 @@ test("add two numbers together", () => {
 test("subtract two numbers, return difference", () => {
   expect(calculator.subtract(10, 7)).toBe(3);
 });
+
+test("divide two numbers, return quotient", () => {
+  expect(calculator.divide(12, 2)).toBe(6);
+});
