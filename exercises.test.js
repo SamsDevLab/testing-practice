@@ -2,22 +2,47 @@ import { capitalize } from "./exercises.js";
 import { reverseString } from "./exercises.js";
 import { calculator } from "./exercises.js";
 
+// Capitalize
 test("capitalizes first letter in string", () => {
   expect(capitalize("apple")).toBe("Apple");
 });
 
+test("capitalizes first letter in string", () => {
+  expect(capitalize("orange")).toBe("Orange");
+});
+
+// Reverse String
 test("reverses a string", () => {
   expect(reverseString("apple")).toBe("elppa");
 });
 
+test("reverses a string", () => {
+  expect(reverseString("orange")).toBe("egnaro");
+});
+
+// Add
 test("add two numbers together", () => {
   expect(calculator.add(2, 3)).toBe(5);
 });
 
+test("add two numbers together", () => {
+  expect(calculator.add(5, 10)).toBe(15);
+});
+
+// Subtract
 test("subtract two numbers, return difference", () => {
   expect(calculator.subtract(10, 7)).toBe(3);
 });
 
+test("subtract two numbers, return difference", () => {
+  expect(calculator.subtract(0, 3)).toBe(-3);
+});
+
+// Divide
 test("divide two numbers, return quotient", () => {
   expect(calculator.divide(12, 2)).toBe(6);
+});
+
+test("divide two numbers, return quotient", () => {
+  expect(calculator.divide(72, 9)).toBe(8);
 });
