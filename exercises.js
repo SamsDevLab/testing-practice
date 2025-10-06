@@ -63,7 +63,28 @@ const shiftLowerCase = (charCode, shiftFactor) => {
   }
 };
 
-const shiftUpperCase = () => {};
+const shiftUpperCase = (charCode, shiftFactor) => {
+  const upperCaseA = "A";
+  const upperCaseZ = "Z";
+
+  const upperCaseACode = upperCaseA.charCodeAt(0);
+  const upperCaseZCode = upperCaseZ.charCodeAt(0);
+
+  const shiftedCharCode = charCode + shiftFactor;
+
+  if (shiftedCharCode < upperCaseACode) {
+    const subtractedValue = upperCaseACode - shiftedCharCode;
+    const newLetter = String.fromCharCode(upperCaseZCode + 1 - subtractedValue);
+    return newLetter;
+  } else if (shiftedCharCode > upperCaseZCode) {
+    const subtractedValue = shiftedCharCode - upperCaseZCode;
+    const newLetter = String.fromCharCode(upperCaseACode - 1 + subtractedValue);
+    return newLetter;
+  } else {
+    const newLetter = String.fromCharCode(shiftedCharCode);
+    return newLetter;
+  }
+};
 
 export function caesarCipher(str, shiftFactor) {
   const newLetterArr = [];
@@ -73,6 +94,9 @@ export function caesarCipher(str, shiftFactor) {
 
     if (charCode >= 97 && charCode <= 122) {
       const newLetter = shiftLowerCase(charCode, shiftFactor);
+      newLetterArr.push(newLetter);
+    } else if (charCode >= 65 && charCode <= 90) {
+      const newLetter = shiftUpperCase(charCode, shiftFactor);
       newLetterArr.push(newLetter);
     }
   }
