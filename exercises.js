@@ -98,9 +98,12 @@ export function caesarCipher(str, shiftFactor) {
     } else if (charCode >= 65 && charCode <= 90) {
       const newLetter = shiftUpperCase(charCode, shiftFactor);
       newLetterArr.push(newLetter);
+    } else {
+      newLetterArr.push(char);
     }
   }
 
+  console.log(newLetterArr);
   const newStr = newLetterArr.join("");
 
   return newStr;
