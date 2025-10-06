@@ -65,3 +65,11 @@ test("takes a string and a shift factor, returns shifted string", () => {
 test("takes a string and a shift factor, returns shifted string", () => {
   expect(caesarCipher("abc", -3)).toBe("xyz");
 });
+
+test("takes a string and a shift factor, returns shifted string", () => {
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+});
+
+test("takes a string and a shift factor, returns shifted string", () => {
+  expect(caesarCipher("HeLLo", -3)).toBe("EbIIl");
+});
