@@ -1,6 +1,7 @@
 import { capitalize } from "./exercises.js";
 import { reverseString } from "./exercises.js";
 import { calculator } from "./exercises.js";
+import { caesarCipher } from "./exercises.js";
 
 // Capitalize
 test("capitalizes first letter in string", () => {
@@ -54,4 +55,13 @@ test("multiply two numbers, return product", () => {
 
 test("multiply two numbers, return product", () => {
   expect(calculator.multiply(10, 3)).toBe(30);
+});
+
+// Caesar Cipher
+test("takes a string and a shift factor, returns shifted string", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+
+test("takes a string and a shift factor, returns shifted string", () => {
+  expect(caesarCipher("abc", -3)).toBe("xyz");
 });
