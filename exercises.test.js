@@ -73,3 +73,7 @@ test("takes a string and a shift factor, returns shifted string", () => {
 test("takes a string and a shift factor, returns shifted string", () => {
   expect(caesarCipher("HeLLo", -3)).toBe("EbIIl");
 });
+
+test("takes a string with punctuation and a shift factor, returns shifted string", () => {
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
