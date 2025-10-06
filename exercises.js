@@ -30,3 +30,52 @@ export const calculator = {
     return product;
   },
 };
+
+/*
+Pseudo:
+
+• Use ASCII values with charCode 97 - 122 (a-z)
+• Need to iterate through each char of the string and add new cipher letter to an array
+    • With the exception of punctuation - just add this to the array (.,!) etc.
+    • Also, spaces are an exception but they need to be included in the array as well
+*/
+
+export function caesarCipher(str, shiftFactor) {
+  const newLetterArr = [];
+
+  const lowerCaseA = "a";
+  const lowerCaseZ = "z";
+
+  const lowerCaseACode = lowerCaseA.charCodeAt(0);
+  const lowerCaseZCode = lowerCaseZ.charCodeAt(0);
+
+  for (const char of str) {
+    const charCode = char.charCodeAt(char); // 120, 121, 122 (final codes in alphabet)
+    const shiftedCharCode = charCode + shiftFactor; // 123, 124, 125 (wrap to front (97,98, 99))
+
+    if (shiftedCharCode < lowerCaseACode) {
+      const subtractedValue = lowerCaseACode - shiftedCharCode;
+      const newLetter = String.fromCharCode(
+        lowerCaseZCode + 1 - subtractedValue
+      );
+      newLetterArr.push(newLetter);
+    } else if (shiftedCharCode > lowerCaseZCode) {
+      const subtractedValue = shiftedCharCode - lowerCaseZCode;
+      const newLetter = String.fromCharCode(
+        lowerCaseACode - 1 + subtractedValue
+      );
+      newLetterArr.push(newLetter);
+    } else {
+      const newLetter = String.fromCharCode(shiftedCharCode);
+      newLetterArr.push(newLetter);
+    }
+  }
+
+  const newStr = newLetterArr.join("");
+
+  return newStr;
+}
+
+//******************* */
+// Use Later:
+//
