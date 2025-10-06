@@ -40,6 +40,51 @@ Pseudo:
     • Also, spaces are an exception but they need to be included in the array as well
 */
 
+const shiftLowerCase = (charCode, shiftFactor) => {
+  const lowerCaseA = "a";
+  const lowerCaseZ = "z";
+
+  const lowerCaseACode = lowerCaseA.charCodeAt(0);
+  const lowerCaseZCode = lowerCaseZ.charCodeAt(0);
+
+  const shiftedCharCode = charCode + shiftFactor;
+
+  if (shiftedCharCode < lowerCaseACode) {
+    const subtractedValue = lowerCaseACode - shiftedCharCode;
+    const newLetter = String.fromCharCode(lowerCaseZCode + 1 - subtractedValue);
+    return newLetter;
+  } else if (shiftedCharCode > lowerCaseZCode) {
+    const subtractedValue = shiftedCharCode - lowerCaseZCode;
+    const newLetter = String.fromCharCode(lowerCaseACode - 1 + subtractedValue);
+    return newLetter;
+  } else {
+    const newLetter = String.fromCharCode(shiftedCharCode);
+    return newLetter;
+  }
+};
+
+const shiftUpperCase = () => {};
+
+export function caesarCipher(str, shiftFactor) {
+  const newLetterArr = [];
+
+  for (const char of str) {
+    const charCode = char.charCodeAt(char); // 120, 121, 122 (final codes in alphabet)
+
+    if (charCode >= 97 && charCode <= 122) {
+      const newLetter = shiftLowerCase(charCode, shiftFactor);
+      newLetterArr.push(newLetter);
+    }
+  }
+
+  const newStr = newLetterArr.join("");
+
+  return newStr;
+}
+
+/* 
+First Draft: 
+
 export function caesarCipher(str, shiftFactor) {
   const newLetterArr = [];
 
@@ -75,7 +120,4 @@ export function caesarCipher(str, shiftFactor) {
 
   return newStr;
 }
-
-//******************* */
-// Use Later:
-//
+*/
