@@ -2,6 +2,7 @@ import { capitalize } from "./exercises.js";
 import { reverseString } from "./exercises.js";
 import { calculator } from "./exercises.js";
 import { caesarCipher } from "./exercises.js";
+import { analyzeArray } from "./exercises.js";
 
 // Capitalize
 test("capitalizes first letter in string", () => {
@@ -76,4 +77,34 @@ test("takes a string and a shift factor, returns shifted string", () => {
 
 test("takes a string with punctuation and a shift factor, returns shifted string", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+// test("takes an array of numbers and returns an object with the following properties: average", () => {
+//   expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+//     average: 4,
+//   });
+// });
+
+// test("takes an array of numbers and returns an object with the following properties: average and min", () => {
+//   expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+//     average: 4,
+//     min: 1,
+//   });
+// });
+
+// test("takes an array of numbers and returns an object with the following properties: average,min, and max", () => {
+//   expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+//     average: 4,
+//     min: 1,
+//     max: 8,
+//   });
+// });
+
+test("takes an array of numbers and returns an object with the following properties: average, min, max, and length", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
