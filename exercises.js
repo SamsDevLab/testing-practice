@@ -31,6 +31,8 @@ export const calculator = {
   },
 };
 
+/**************** */
+
 const getBaseNum = (charCode) => {
   if (charCode >= 97 && charCode <= 122) {
     return 97;
@@ -71,4 +73,44 @@ export function caesarCipher(str, shiftFactor) {
   const newStr = newLetterArr.join("");
 
   return newStr;
+}
+
+/************************ */
+
+const getAverage = (arr) => {
+  let counter = 0;
+
+  arr.forEach((element) => {
+    counter += element;
+  });
+
+  const average = counter / arr.length;
+
+  return average;
+};
+
+const getMinValue = (arr) => {
+  const minValue = Math.min(...arr);
+  return minValue;
+};
+
+const getMaxValue = (arr) => {
+  const maxValue = Math.max(...arr);
+  return maxValue;
+};
+
+const getLength = (arr) => {
+  const length = arr.length;
+  return length;
+};
+
+export function analyzeArray(arr) {
+  const object = {
+    average: getAverage(arr),
+    min: getMinValue(arr),
+    max: getMaxValue(arr),
+    length: getLength(arr),
+  };
+
+  return object;
 }
